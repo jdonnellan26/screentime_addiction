@@ -1,0 +1,18 @@
+---
+title: "Final Project"
+format: html
+---
+
+```{r}
+library(readr)
+library(dplyr)
+recent_grads <- read_csv("data/recent-grads.csv")
+
+jobs <- recent_grads |>
+  select( -Major_code, -Sample_size, - Full_time_year_round)|>
+  rename(median_earnings = Median,
+         college_req = College_jobs,
+         no_college_req = Non_college_jobs,
+         earnings_rank = Rank)
+```
+
